@@ -3,7 +3,7 @@ import { defineMessages } from '@edx/frontend-platform/i18n';
 const messages = defineMessages({
   lookingForChallengePrompt: {
     id: 'WidgetSidebar.lookingForChallengePrompt',
-    defaultMessage: 'Looking for a new challenge?',
+    defaultMessage: 'Hola Gabriel te escribo desde el local',
     description: 'Prompt user for new challenge',
   },
   findCoursesButton: {
