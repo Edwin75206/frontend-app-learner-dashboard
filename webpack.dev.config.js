@@ -21,5 +21,10 @@ config.plugins.push(
     ],
   }),
 );
+config.devServer = {
+  port: 1996,
+  allowedHosts: 'all',
+};
+
 
 module.exports = config;
