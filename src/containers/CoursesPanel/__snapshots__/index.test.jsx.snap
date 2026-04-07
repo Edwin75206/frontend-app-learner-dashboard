@@ -41,9 +41,10 @@ exports[`CoursesPanel with courses snapshot 1`] = `
       className="course-list-controls-bar"
     >
       <Form.Group
-        className="course-search-control mb-0"
+        className="course-search-control"
       >
         <Form.Control
+          className="course-search-input"
           onChange={[Function]}
           placeholder="Buscar curso"
           value=""

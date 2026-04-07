@@ -93,8 +93,9 @@ export const CoursesPanel = () => {
       {hasCourses ? (
         <>
           <div className="course-list-controls-bar">
-            <Form.Group className="course-search-control mb-0">
+            <Form.Group className="course-search-control">
               <Form.Control
+                className="course-search-input"
                 value={searchTerm}
                 onChange={(event) => setSearchTerm(event.target.value)}
                 placeholder={formatMessage(messages.searchPlaceholder)}
