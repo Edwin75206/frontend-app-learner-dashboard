@@ -10,6 +10,7 @@ const actions = redux.actions.app;
 /** Simple Selectors **/
 export const usePageNumber = () => useSelector(selectors.pageNumber);
 export const useFilters = () => useSelector(selectors.filters);
+export const useCourseData = () => useSelector(selectors.courseData);
 export const useEmailConfirmationData = () => useSelector(selectors.emailConfirmation);
 export const useEnterpriseDashboardData = () => useSelector(selectors.enterpriseDashboard);
 export const usePlatformSettingsData = () => useSelector(selectors.platformSettings);

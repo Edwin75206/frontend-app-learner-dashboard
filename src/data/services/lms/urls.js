@@ -9,6 +9,9 @@ const getBaseUrl = () => getConfig().LMS_BASE_URL;
 export const getApiUrl = () => (`${getConfig().LMS_BASE_URL}/api`);
 
 const getInitApiUrl = () => (`${getApiUrl()}/learner_home/init`);
+export const courseHomeDates = (courseId) => `${getApiUrl()}/course_home/v1/dates/${encodeURIComponent(courseId)}`;
+export const courseHomeOutline = (courseId) => `${getApiUrl()}/course_home/v1/outline/${encodeURIComponent(courseId)}`;
+export const courseBlocks = () => `${getApiUrl()}/courses/v2/blocks/`;
 
 const event = () => `${getBaseUrl()}/event`;
 const courseUnenroll = () => `${getBaseUrl()}/change_enrollment`;
@@ -30,6 +33,9 @@ export const creditRequestUrl = (providerId) => `${getApiUrl()}/credit/v1/provid
 export default StrictDict({
   getApiUrl,
   baseAppUrl,
+  courseBlocks,
+  courseHomeDates,
+  courseHomeOutline,
   courseUnenroll,
   creditPurchaseUrl,
   creditRequestUrl,

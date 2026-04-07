@@ -10,13 +10,8 @@ exports[`CoursesPanel no courses snapshot 1`] = `
     <h2
       className="course-list-title"
     >
-      My Courses
+      Mis cursos
     </h2>
-    <div
-      className="course-filter-controls-container"
-    >
-      <CourseFilterControls />
-    </div>
   </div>
   <NoCoursesViewSlot />
 </div>
@@ -32,24 +27,39 @@ exports[`CoursesPanel with courses snapshot 1`] = `
     <h2
       className="course-list-title"
     >
-      My Courses
+      Mis cursos
     </h2>
-    <div
-      className="course-filter-controls-container"
+    <span
+      aria-live="polite"
+      className="course-list-count"
     >
-      <CourseFilterControls />
-    </div>
+      Mostrando 0 de 0
+    </span>
   </div>
-  <CourseListSlot
-    courseListData={
-      {
-        "filterOptions": {},
-        "numPages": 1,
-        "setPageNumber": [MockFunction setPageNumber],
-        "showFilters": false,
-        "visibleList": [],
-      }
-    }
-  />
+  <Fragment>
+    <div
+      className="course-list-controls-bar"
+    >
+      <Form.Group
+        className="course-search-control mb-0"
+      >
+        <Form.Control
+          onChange={[Function]}
+          placeholder="Buscar curso"
+          value=""
+        />
+      </Form.Group>
+      <div
+        className="course-filter-controls-container"
+      >
+        <CourseFilterControls />
+      </div>
+    </div>
+    <p
+      className="mb-0"
+    >
+      No se encontraron cursos
+    </p>
+  </Fragment>
 </div>
 `;

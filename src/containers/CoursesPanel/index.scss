@@ -2,14 +2,33 @@
 
 .course-list-heading-container {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  gap: map-get($spacers, 3);
 }
 
 .course-list-title {
   font-size: $h2-font-size;
   margin: map-get($spacers, 3) 0;
+}
+
+.course-list-controls-bar {
+  display: flex;
+  align-items: center;
+  gap: map-get($spacers, 3);
+  margin-bottom: map-get($spacers, 4);
+}
+
+.course-search-control {
+  flex: 1 1 auto;
+}
+
+.course-list-count {
+  color: $gray-700;
+  font-size: $font-size-sm;
+  font-weight: 500;
+  white-space: nowrap;
+  text-align: right;
 }
 
 .course-list-loading {
@@ -22,21 +41,32 @@
 .course-filter-controls-container {
   text-align: right;
   align-self: center;
+  flex: 0 0 auto;
 }
 
 @include media-breakpoint-down(md) {
   .course-list-heading-container {
-    flex-direction: column-reverse;
     align-items: flex-start;
-  }
-
-  .course-filter-controls-container {
-    text-align: left;
-    align-self: flex-start;
+    flex-direction: column;
   }
 
   .course-list-title {
     font-size: $h3-font-size;
     margin: map-get($spacers, 2) 0;
+  }
+
+  .course-list-controls-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .course-list-count {
+    align-self: flex-start;
+    text-align: left;
+  }
+
+  .course-filter-controls-container {
+    text-align: left;
+    align-self: stretch;
   }
 }

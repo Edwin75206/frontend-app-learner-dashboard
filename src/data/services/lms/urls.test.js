@@ -39,6 +39,22 @@ describe('urls', () => {
       expect(url).toEqual(expect.stringContaining(courseId));
     });
   });
+  describe('courseHomeDates', () => {
+    it('builds from api url and encodes courseId', () => {
+      const courseId = 'course-v1:edX+DemoX+2026_T1';
+      const url = urls.courseHomeDates(courseId);
+      expect(url.startsWith(urls.getApiUrl())).toEqual(true);
+      expect(url).toEqual(expect.stringContaining(encodeURIComponent(courseId)));
+    });
+  });
+  describe('courseHomeOutline', () => {
+    it('builds from api url and encodes courseId', () => {
+      const courseId = 'course-v1:edX+DemoX+2026_T1';
+      const url = urls.courseHomeOutline(courseId);
+      expect(url.startsWith(urls.getApiUrl())).toEqual(true);
+      expect(url).toEqual(expect.stringContaining(encodeURIComponent(courseId)));
+    });
+  });
   describe('creditRequestUrl', () => {
     it('builds from api url and loads providerId', () => {
       const providerId = 'test-provider-id';

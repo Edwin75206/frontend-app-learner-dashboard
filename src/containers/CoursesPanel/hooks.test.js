@@ -26,6 +26,7 @@ const testListData = {
   numPages: 52,
   visibleList: testList,
 };
+const testAllCourses = ['a', 'b', 'c'];
 const testSortBy = 'fake sort option';
 const testFilters = ['some', 'fake', 'filters'];
 
@@ -39,7 +40,9 @@ reduxHooks.useFilters.mockReturnValue(['some', 'fake', 'filters']);
 describe('CourseList hooks', () => {
   let out;
 
-  reduxHooks.useCurrentCourseList.mockReturnValue(testListData);
+  reduxHooks.useCurrentCourseList
+    .mockReturnValueOnce(testListData)
+    .mockReturnValueOnce({ visible: testAllCourses });
 
   describe('state values', () => {
     state.testGetter(state.keys.sortBy);
@@ -49,6 +52,10 @@ describe('CourseList hooks', () => {
   describe('useCourseListData', () => {
     afterEach(state.restore);
     beforeEach(() => {
+      reduxHooks.useCurrentCourseList.mockReset();
+      reduxHooks.useCurrentCourseList
+        .mockReturnValueOnce(testListData)
+        .mockReturnValueOnce({ visible: testAllCourses });
       state.mock();
       state.mockVal(state.keys.sortBy, testSortBy);
       out = hooks.useCourseListData();
@@ -63,8 +70,17 @@ describe('CourseList hooks', () => {
           filters: testFilters,
           pageSize: ListPageSize,
         });
+        expect(reduxHooks.useCurrentCourseList).toHaveBeenCalledWith({
+          sortBy: testSortBy,
+          filters: testFilters,
+          pageSize: 0,
+        });
       });
       it('loads current course list with page size 0 if/when there is query param disable_pagination=1', () => {
+        reduxHooks.useCurrentCourseList.mockReset();
+        reduxHooks.useCurrentCourseList
+          .mockReturnValueOnce({ visibleList: testList, numPages: 1 })
+          .mockReturnValueOnce({ visible: testAllCourses });
         state.mock();
         state.mockVal(state.keys.sortBy, testSortBy);
         queryString.parse.mockReturnValueOnce({ disable_pagination: 1 });
@@ -83,9 +99,15 @@ describe('CourseList hooks', () => {
       test('numPages and visible list load from useCurrentCourseList hook', () => {
         expect(out.numPages).toEqual(testListData.numPages);
         expect(out.visibleList).toEqual(testListData.visibleList);
+        expect(out.allCourses).toEqual(testAllCourses);
+        expect(out.pageSize).toEqual(ListPageSize);
       });
       test('showFilters is true iff filters is not empty', () => {
         expect(out.showFilters).toEqual(true);
+        reduxHooks.useCurrentCourseList.mockReset();
+        reduxHooks.useCurrentCourseList
+          .mockReturnValueOnce(testListData)
+          .mockReturnValueOnce({ visible: testAllCourses });
         state.mockVal(state.keys.sortBy, testSortBy);
         reduxHooks.useFilters.mockReturnValueOnce([]);
         out = hooks.useCourseListData();

@@ -2,6 +2,7 @@ import { shallow } from '@edx/react-unit-test-utils';
 
 import WidgetSidebarSlot from '.';
 
+jest.mock('widgets/GlobalCalendarWidget', () => 'GlobalCalendarWidget');
 jest.mock('widgets/LookingForChallengeWidget', () => 'LookingForChallengeWidget');
 
 jest.mock('@openedx/frontend-plugin-framework', () => ({

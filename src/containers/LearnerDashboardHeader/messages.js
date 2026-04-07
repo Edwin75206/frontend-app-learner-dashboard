@@ -3,7 +3,7 @@ import { defineMessages } from '@edx/frontend-platform/i18n';
 const messages = defineMessages({
   dashboard: {
     id: 'learnerVariantDashboard.menu.dashboard.label',
-    defaultMessage: 'Dashboard',
+    defaultMessage: 'Panel',
     description: 'The text for the user menu Dashboard navigation link.',
   },
   dashboardPersonal: {
@@ -13,57 +13,57 @@ const messages = defineMessages({
   },
   dashboardSwitch: {
     id: 'learnerVariantDashboard.menu.dashboardSwitch.label',
-    defaultMessage: 'SWITCH DASHBOARD',
+    defaultMessage: 'CAMBIAR PANEL',
     description: 'Switch Dashboard header in the user menu',
   },
   help: {
     id: 'learnerVariantDashboard.help.label',
-    defaultMessage: 'Help',
+    defaultMessage: 'Ayuda',
     description: 'The text for the link to the Help Center',
   },
   profile: {
     id: 'learnerVariantDashboard.menu.profile.label',
-    defaultMessage: 'Profile',
+    defaultMessage: 'Perfil',
     description: 'The text for the user menu Profile navigation link.',
   },
   viewPrograms: {
     id: 'learnerVariantDashboard.menu.viewPrograms.label',
-    defaultMessage: 'View Programs',
+    defaultMessage: 'Ver programas',
     description: 'The text for the user menu View Programs navigation link.',
   },
   account: {
     id: 'learnerVariantDashboard.menu.account.label',
-    defaultMessage: 'Account',
+    defaultMessage: 'Cuenta',
     description: 'The text for the user menu Account navigation link.',
   },
   orderHistory: {
     id: 'learnerVariantDashboard.menu.orderHistory.label',
-    defaultMessage: 'Order History',
+    defaultMessage: 'Historial de pedidos',
     description: 'The text for the user menu Order History navigation link.',
   },
   signOut: {
     id: 'learnerVariantDashboard.menu.signOut.label',
-    defaultMessage: 'Sign Out',
+    defaultMessage: 'Cerrar sesion',
     description: 'The label for the user menu Sign Out action.',
   },
   course: {
     id: 'learnerVariantDashboard.course',
-    defaultMessage: 'Courses',
+    defaultMessage: 'Cursos',
     description: 'Header link for switching to dashboard page.',
   },
   program: {
     id: 'learnerVariantDashboard.program',
-    defaultMessage: 'Programs',
+    defaultMessage: 'Programas',
     description: 'Header link for switching to program page.',
   },
   discoverNew: {
     id: 'learnerVariantDashboard.discoverNew',
-    defaultMessage: 'Discover New',
+    defaultMessage: 'Descubrir',
     description: 'Header link for switching to discover page.',
   },
   logoAltText: {
     id: 'learnerVariantDashboard.logoAltText',
-    defaultMessage: 'edX, Inc. Dashboard',
+    defaultMessage: 'Panel de edX, Inc.',
     description: 'Alt text for the edX logo.',
   },
   collapseMenuOpenAltText: {
@@ -73,17 +73,17 @@ const messages = defineMessages({
   },
   collapseMenuClosedAltText: {
     id: 'learnerVariantDashboard.collapseMenuClosedAltText',
-    defaultMessage: 'Close',
+    defaultMessage: 'Cerrar',
     description: 'Alt text for the collapse menu icon when the menu is closed.',
   },
   career: {
     id: 'leanerDashboard.menu.career.label',
-    defaultMessage: 'Career',
+    defaultMessage: 'Carrera',
     description: 'The text for the user menu Career navigation link.',
   },
   newAlert: {
     id: 'header.menu.new.label',
-    defaultMessage: 'New',
+    defaultMessage: 'Nuevo',
     description: 'The text announcing that an item in the user menu is New',
   },
 });

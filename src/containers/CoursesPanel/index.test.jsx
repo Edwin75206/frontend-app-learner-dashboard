@@ -1,3 +1,4 @@
+import React from 'react';
 import { shallow } from '@edx/react-unit-test-utils';
 
 import { reduxHooks } from 'hooks';
@@ -26,8 +27,10 @@ reduxHooks.useHasCourses.mockReturnValue(true);
 
 describe('CoursesPanel', () => {
   const defaultCourseListData = {
+    allCourses: [],
     filterOptions: {},
     numPages: 1,
+    pageSize: 25,
     setPageNumber: jest.fn().mockName('setPageNumber'),
     showFilters: false,
     visibleList: [],
@@ -40,6 +43,10 @@ describe('CoursesPanel', () => {
     });
     return shallow(<CoursesPanel />);
   };
+
+  beforeEach(() => {
+    React.useState.mockImplementation((value) => [value, jest.fn()]);
+  });
 
   describe('no courses', () => {
     test('snapshot', () => {

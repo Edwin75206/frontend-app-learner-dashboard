@@ -20,6 +20,14 @@ export const initializeList = ({ user } = {}) => get(
   stringifyUrl(urls.getInitApiUrl(), { [apiKeys.user]: user }),
 );
 
+export const getCourseDates = ({ courseId }) => get(urls.courseHomeDates(courseId));
+export const getCourseOutline = ({ courseId }) => get(urls.courseHomeOutline(courseId));
+export const getCourseBlocksProgress = ({ courseId }) => get(stringifyUrl(urls.courseBlocks(), {
+  course_id: courseId,
+  depth: 'all',
+  requested_fields: 'completion',
+}));
+
 export const updateEntitlementEnrollment = ({ uuid, courseId }) => post(
   urls.entitlementEnrollment(uuid),
   { [apiKeys.courseRunId]: courseId },
@@ -67,6 +75,9 @@ export const createCreditRequest = ({ providerId, courseId, username }) => post(
 
 export default {
   initializeList,
+  getCourseDates,
+  getCourseBlocksProgress,
+  getCourseOutline,
   unenrollFromCourse,
   updateEmailSettings,
   updateEntitlementEnrollment,

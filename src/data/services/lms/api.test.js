@@ -59,6 +59,20 @@ describe('lms api methods', () => {
       );
     });
   });
+  describe('getCourseDates', () => {
+    it('calls get on course home dates url with course id', () => {
+      expect(api.getCourseDates({ courseId })).toEqual(
+        utils.get(urls.courseHomeDates(courseId)),
+      );
+    });
+  });
+  describe('getCourseOutline', () => {
+    it('calls get on course home outline url with course id', () => {
+      expect(api.getCourseOutline({ courseId })).toEqual(
+        utils.get(urls.courseHomeOutline(courseId)),
+      );
+    });
+  });
   describe('deleteEntitlementEnrollment', () => {
     it('calls delete on entitlementEnrollment url with uuid and null course run ID', () => {
       expect(

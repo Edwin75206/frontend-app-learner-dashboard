@@ -4,6 +4,7 @@ exports[`WidgetSidebar snapshots 1`] = `
 <PluginSlot
   id="widget_sidebar_slot"
 >
+  <GlobalCalendarWidget />
   <LookingForChallengeWidget />
 </PluginSlot>
 `;
