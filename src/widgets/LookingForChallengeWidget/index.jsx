@@ -48,16 +48,15 @@ export const LookingForChallengeWidget = () => {
     <h3
       style={{
         fontSize: '1.2rem',
-        fontWeight: '500', // Un grosor de letra moderno, no tan pesado como el bold
-        color: '#2c3e50', // Un tono de negro azulado, más suave que el negro puro
+        fontWeight: '500',
+        color: '#2c3e50', 
         marginBottom: '1.5rem',
-        textAlign: 'center', // Centramos el título para un look más amigable
+        textAlign: 'center', 
         fontFamily: 'inherit',
-        letterSpacing: '0.5px', // Un poco de espacio extra entre letras
+        letterSpacing: '0.5px', 
       }}
     >
-      {/* ¡NUEVO! Título con emojis y un toque más amigable */}
-      ✨ Acceso a plataformas ✨
+      ✨ Acceso a plataformas adicionales ✨
     </h3>
 
     {/* Contenedor para los logos */}
